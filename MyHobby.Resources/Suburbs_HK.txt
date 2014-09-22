@@ -1,0 +1,92 @@
+﻿1,香港島,Hong Kong Islands
+上環,Sheung Wan
+大坑,Tai Hang
+山頂,The Peak
+中環,Central
+蘇豪,Soho
+蘭桂坊,Lan Kwai Fong
+天后,Tin Hau
+太古,Tai Koo
+北角,North Point
+半山,Mid-Levels
+石澳,Shek O
+西環,Western District
+赤柱,Stanley
+金鐘,Admiralty
+柴灣,Chai Wan
+灣仔,Wan Chai
+西灣河,Sai Wan Ho
+杏花村,Heng Fa Chuen
+香港仔,Aberdeen
+淺水灣,Repulse Bay
+深水灣,Deep Water Bay
+跑馬地,Happy Valley
+筲箕灣,Shau Kei Wan
+銅鑼灣,Causeway Bay
+鴨脷洲,Ap Lei Chau
+薄扶林,Pok Fu Lam
+數碼港,Cyberport
+鰂魚涌,Quarry Bay
+2,九龍,Kowloon
+太子,Prince Edward
+佐敦,Jordan
+旺角,Mong Kok
+油塘,Yau Tong
+紅磡,Hung Hom
+美孚,Mei Foo
+彩虹,Choi Hung
+樂富,Lok Fu
+藍田,Lam Tin
+觀塘,Kwun Tong
+九龍城,Kowloon City
+九龍塘,Kowloon Tong
+九龍灣,Kowloon Bay
+土瓜灣,To Kwa Wan
+大角咀,Tai Kok Tsui
+牛頭角,Ngau Tau Kwok
+石硤尾,Shek Kip Mei
+尖沙咀,Tsim Sha Tsui
+諾士佛臺,Knutsford Terrace
+何文田,Ho Man Tin
+油麻地,Yau Ma Tei
+長沙灣,Cheung Sha Wan
+荔枝角,Lai Chi Kok
+深水埗,Sham Shui Po
+黃大仙,Wong Tai Sin
+慈雲山,Tsz Wan Shan
+新蒲崗,San Po Kong
+鯉魚門,Lei Yue Mun
+鑽石山,Diamond Hill
+3,新界,New Territories
+上水,Sheung Shui
+大埔,Tai Po
+大圍,Tai Wai
+元朗,Yuen Long
+太和,Tai Wo
+屯門,Tuen Mun
+火炭,Fo Tan
+西貢,Sai Kung
+沙田,Sha Tin
+青衣,Tsing Yi
+粉嶺,Fanling
+荃灣,Tsuen Wan
+馬灣,Ma Wan
+深井,Sham Tseng
+葵芳,Kwai Fong
+葵涌,Kwai Chung
+羅湖,Lo Wu
+天水圍,Tin Shui Wai
+流浮山,Lau Fau shan
+馬鞍山,Ma On Shan
+將軍澳,Tseung Kwan O
+落馬洲,Lok Ma Chau
+4,離島,Outlying Islands
+大澳,Tai O
+坪洲,Ping Chau
+東涌,Tung Chung
+長洲,Cheung Chau
+大嶼山,Lantau Island
+赤鱲角,Chek Lap Kok
+南丫島,Lamma Island
+愉景灣,Discovery Bay
+蒲苔島,Po Toi Island

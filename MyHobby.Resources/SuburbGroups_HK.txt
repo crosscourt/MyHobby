@@ -1,0 +1,4 @@
+﻿1,香港島,Hong Kong Island
+2,九龍,Kowloon
+3,新界,New Territories
+4,離島,Outlying Islands
