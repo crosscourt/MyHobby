@@ -18,9 +18,9 @@ namespace MyHobby.Repositories
  
         public IQueryable GetSuburbs(int cityId)
         {
-            var suburbGroups = from sg in _ctx.SuburbGroups
+            var suburbGroups = from sg in _ctx.SuburbGroups.Include("Suburbs")
                                where sg.City.Id == cityId
-                               select new { Groups = sg, Suburbs = sg.Suburbs };
+                               select sg;
 
             return suburbGroups;
         }

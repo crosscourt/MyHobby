@@ -1,5 +1,6 @@
 ﻿using MyHobby.ApiModels;
 using MyHobby.Models;
+using MyHobby.Repositories;
 using MyHobby.Security;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,11 @@ namespace MyHobby.Controllers
     public class UsersController : ApiController
     {
         private MyHobbyContext _db;
+        private UserRepository _userRepository;
 
-        public UsersController()
+        public UsersController(UserRepository userRepository)
         {
-            _db = new MyHobbyContext();
+            _userRepository = userRepository;
         }
 
         // GET api/<controller>
@@ -29,28 +31,20 @@ namespace MyHobby.Controllers
         //[RequireLogin]
         public IHttpActionResult Get(int id)
         {
-            User user = _db.Users.Find(id);
-
+            User user = _userRepository.GetUser(id);
             if (user != null)
             {
-                // Count how many businesses the user has  
-                int adminCount = _db.Entry(user)
-                                      .Collection(u => u.AdminAtBusinesses)
-                                      .Query()
-                                      .Count();
-                user.IsAdmin = adminCount > 0;
-
-                // Count how many businesses the user has  
-                int teachingCount = _db.Entry(user)
-                                      .Collection(u => u.TeacherAtBusinesses)
-                                      .Query()
-                                      .Count();
-                user.IsTeacher = teachingCount > 0;
-
                 return Ok(new UserDTO(user));
             }
             
             return NotFound(); // Returns a NotFoundResult           
+        }
+
+        public IEnumerable<SimpleUserDTO> Get(string name)
+        {
+            var users = _userRepository.FindUsersByName(name);
+            var userDTOs = users.ToList().ConvertAll(u => new SimpleUserDTO(u));
+            return userDTOs;
         }
 
         // POST api/users

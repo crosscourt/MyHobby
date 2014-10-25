@@ -60,7 +60,7 @@ namespace MyHobby.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<MyHobbyContext>().To<MyHobbyContext>().InRequestScope();
-            kernel.Bind<UserRepository>().To<UserRepository>().InRequestScope();
+            //kernel.Bind<UserRepository>().To<UserRepository>().InRequestScope();
         }        
     }
 }

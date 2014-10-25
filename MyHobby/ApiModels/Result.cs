@@ -22,6 +22,24 @@ namespace MyHobby.ApiModels
 
         public bool Success { get; set; }
         public string Message { get; set; }
+    }
 
+    public class Result<T>
+    {        
+        public Result(bool success, T item)
+        {
+            this.Success = success;
+            this.Item = item;
+        }
+
+        public Result(bool success, string message)         
+        {
+            this.Success = success;
+            this.Message = message;
+        }
+
+        public bool Success { get; set; }
+        public string Message { get; set; }
+        public T Item { get; set; }
     }
 }

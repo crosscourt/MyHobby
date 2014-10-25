@@ -18,16 +18,20 @@ namespace MyHobby.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime CreatedDate { get; set; }
+        public string Language { get; set; }
+        public string Timezone { get; set; }
 
         [NotMapped]
-        public bool IsAdmin { get; set; }
+        public List<int> AdminBusinesses { get; set; }
 
         [NotMapped]
-        public bool IsTeacher { get; set; }
+        public List<int> TeacherBusinesses { get; set; }
 
-        public virtual ICollection<StudentLesson> AttendingLessons { get; set; }
+        public virtual ICollection<Registration> AttendingLessons { get; set; }
         public virtual ICollection<Lesson> TeachingLessons { get; set; }
-        public virtual ICollection<Business> AdminAtBusinesses { get; set; }
-        public virtual ICollection<Business> TeacherAtBusinesses { get; set; }
+        //public virtual ICollection<Business> AdminAtBusinesses { get; set; }
+        //public virtual ICollection<Business> TeacherAtBusinesses { get; set; }
+        public virtual ICollection<BusinessUser> StaffAtBusinesses { get; set; }
+        public virtual ICollection<LessonComment> LessonComments { get; set; }        
     }
 }

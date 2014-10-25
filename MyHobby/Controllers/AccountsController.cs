@@ -65,8 +65,9 @@ namespace MyHobby.Controllers
                     {
                         UserId = user.Id,
                         UserName = user.Username,
-                        //Timezone = user.Timezone,
-                        //Role = logonModel.LoginType,
+                        Timezone = user.Timezone,
+                        Language = user.Language,
+                        //Roles = SerializeRoles(user.StaffAtBusinesses),
                         AuthenticationTime = DateTime.Now
                     };
 
@@ -79,6 +80,21 @@ namespace MyHobby.Controllers
             }
 
             return new AuthenticateResult(false, null) { Message = "invalid login" };
+        }
+
+        private string SerializeRoles(ICollection<BusinessUser> businessUsers)
+        {
+            string res = "";
+            if (businessUsers != null)
+            {
+                var admins = businessUsers.Where(bu => bu.Role == UserRole.Admin);
+                //var teachers = businessUsers.Where(bu => bu.Role == StaffRole.Teacher);
+
+                res = "admin=" + string.Join(",", admins);
+                //string teachStr = "admin=" + string.Join(",", admins);
+            }
+
+            return res;
         }
     }
 }

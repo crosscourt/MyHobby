@@ -18,14 +18,23 @@ namespace MyHobby.Migrations
             StreamReader sr = null;
             try
             {
+                City hk = context.Cities.SingleOrDefault(c => c.EnglishName == "Hong Kong");
+                if (hk != null)
+                {
+                    return;
+                }
+                
+                hk = new City() { Name = "香港", EnglishName = "Hong Kong" };
+                context.Cities.Add(hk);
+
                 Assembly resourceAssembly = Assembly.GetAssembly(typeof(MyHobby.Resources.LocateThisAssembly));
                 Stream stream = resourceAssembly.GetManifestResourceStream("MyHobby.Resources.Suburbs_HK.txt");
 
                 sr = new StreamReader(stream);
                 if (sr != null)
-                {
+                {                    
+                    string line = sr.ReadLine();                    
                     SuburbGroup group = null;
-                    string line = sr.ReadLine();
 
                     while (!string.IsNullOrEmpty(line))
                     {
@@ -36,7 +45,8 @@ namespace MyHobby.Migrations
                             group = new SuburbGroup()
                             {
                                 Name = fields[1],
-                                EnglishName = fields[2]
+                                EnglishName = fields[2],
+                                City = hk
                             };
 
                             context.SuburbGroups.Add(group);                            

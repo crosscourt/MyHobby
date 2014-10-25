@@ -39,15 +39,5 @@ namespace MyHobby.ApiModels
         {
             get { return _user.Name; }
         }
-
-        public bool IsAdmin
-        {
-            get { return _user.IsAdmin; }
-        }
-
-        public bool IsTeacher
-        {
-            get { return _user.IsTeacher; }
-        }
     }
 }
