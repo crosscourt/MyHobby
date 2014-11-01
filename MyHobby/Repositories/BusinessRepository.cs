@@ -76,6 +76,8 @@ namespace MyHobby.Repositories
 
         public void UpdateUser(int businessId, BusinessUserDTO dto)
         {
+            // if only one admin left, then don't update the role?
+
             BusinessUser businessUser = _ctx.BusinessUsers.SingleOrDefault(b => b.BusinessId == businessId && b.UserId == dto.User.Id);
             if (businessUser != null)
             {

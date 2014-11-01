@@ -11,10 +11,18 @@ namespace MyHobby.Security
     {
         protected override bool IsAuthorized(HttpActionContext context)
         {
-            var principal = context.Request.GetRequestContext().Principal as CustomPrincipal;
+            //var principal = context.Request.GetRequestContext().Principal as CustomPrincipal;
             //return principal.Claims.Any(c => c.Type == "http://yourschema/identity/claims/admin" && c.Value == "true");
 
-            return true;
+            var principal = System.Threading.Thread.CurrentPrincipal as CustomPrincipal;
+            if (principal != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

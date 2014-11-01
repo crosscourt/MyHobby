@@ -10,11 +10,11 @@ namespace MyHobby.ApiModels
     {
         private Business _business;
 
-        public BusinessDTO(Business business, int userId)
+        public BusinessDTO(Business business, int userId = 0)
         {
             _business = business;
 
-            if (business.BusinessUsers != null)
+            if (business.BusinessUsers != null && userId != 0)
             {
                 BusinessUser businessUser = business.BusinessUsers.SingleOrDefault(bu => bu.UserId == userId);
                 if (businessUser != null)
@@ -78,6 +78,6 @@ namespace MyHobby.ApiModels
         }
 
         // current login user's role for this business
-        public UserRole UserRole { get; set; }
+        public UserRole? UserRole { get; set; }
     }
 }

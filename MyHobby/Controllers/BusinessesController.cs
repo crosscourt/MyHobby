@@ -28,7 +28,8 @@ namespace MyHobby.Controllers
             return businesses.ToList().ConvertAll(b => new BusinessDTO(b, UserId));
         }
 
-        // GET api/<controller>/5        
+        // GET api/<controller>/5
+        [RequireLogin]
         public BusinessDTO Get(int id)
         {
             var business = _businessRepository.GetBusiness(id);

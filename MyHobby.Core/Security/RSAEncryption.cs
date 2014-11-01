@@ -25,6 +25,12 @@ namespace MyHobby.Core.Security
             }
             */
 
+            string schemePrefix = "Token ";
+            if (data.StartsWith(schemePrefix))
+            {
+                data = data.Substring(schemePrefix.Length);
+            }
+
             byte[] dataByte = Convert.FromBase64String(data);
 
             rsa.FromXmlString(_privateKey);
